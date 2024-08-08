@@ -21,12 +21,15 @@ The primary purpose of this tool is to create an SSH server that compresses and 
 
    ```sh
    git clone https://github.com/ajutra/ssh-backup-server.git
+   ```
+
+   ```sh
    cd ssh-backup-server
    ```
 
 2. **Configure the environment:**
 
-   Edit the `config.yaml` file to set your SSH public key and the volumes you want to back up.
+   Edit the [`config.yaml`](https://github.com/ajutra/ssh-backup-server/blob/main/config.yaml) file to set your SSH public key and the volumes you want to back up.
 
    ```yaml
    # SSH Public Key must be passed in order to access the server
@@ -46,10 +49,13 @@ The primary purpose of this tool is to create an SSH server that compresses and 
 
 3. **Generate the `compose.yaml` file:**
 
-   Grant execute permissions to the `generate-compose.sh` script and run it to generate the `compose.yaml` file based on your configuration.
+   Grant execute permissions to the [`generate-compose.sh`](https://github.com/ajutra/ssh-backup-server/blob/main/generate-compose.sh) script and run it to generate the `compose.yaml` file based on your configuration.
 
    ```sh
    chmod +x generate-compose.sh
+   ```
+
+   ```sh
    ./generate-compose.sh
    ```
 
@@ -71,11 +77,11 @@ Replace `/path/to/private/ssh/key/file` with the path to your private SSH key, `
 
 ## Files
 
-- `config.yaml`: Configuration file for environment variables and volumes.
-- `Dockerfile`: Dockerfile to build the SSH server image.
-- `entrypoint.sh`: Entrypoint script to compress the backup files.
-- `generate-compose.sh`: Script to generate the `compose.yaml` file based on `config.yaml`.
-- `Makefile`: Makefile to create a `.tar` file for building the Docker image in environments like Portainer.
+- [`config.yaml`](https://github.com/ajutra/ssh-backup-server/blob/main/config.yaml): Configuration file for environment variables and volumes.
+- [`Dockerfile`](https://github.com/ajutra/ssh-backup-server/blob/main/Dockerfile): Dockerfile to build the SSH server image.
+- [`entrypoint.sh`](https://github.com/ajutra/ssh-backup-server/blob/main/entrypoint.sh): Entrypoint script to compress the backup files.
+- [`generate-compose.sh`](https://github.com/ajutra/ssh-backup-server/blob/main/generate-compose.sh): Script to generate the `compose.yaml` file based on [`config.yaml`](https://github.com/ajutra/ssh-backup-server/blob/main/config.yaml).
+- [`Makefile`](https://github.com/ajutra/ssh-backup-server/blob/main/Makefile): Makefile to create a `.tar` file for building the Docker image in environments like Portainer.
 
 ## Disclaimer
 
